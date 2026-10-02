@@ -1,0 +1,40 @@
+
+import java.util.Scanner;
+public class Question_04 {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+
+        System.out.println("Enter your number of subjects:");
+        int n = Sc.nextInt();
+
+        int[] arr = new int[n];
+        int total = 0;
+        float average;
+        int fail = 0;
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter marks for subject " + (i + 1) + ":");
+            arr[i] = Sc.nextInt();
+
+            total = total + arr[i];
+
+            if (arr[i] < 40) {
+                fail++;
+            }
+        }
+
+        average = (float) total / n;
+
+        System.out.println("Total: " + total);
+        System.out.println("Average: " + average);
+        System.out.println("Failed subjects: " + fail);
+
+        if (average > 50 && fail == 0) {
+            System.out.println("Pass");
+        } else {
+            System.out.println("Fail");
+        }
+
+        Sc.close();
+    }
+}
