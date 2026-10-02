@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Question_02 {
+    public static void main(String[] args) {
+        Scanner Sc =new Scanner(System.in);
+        System.out.println("Enter your marks:");
+        int marks= Sc.nextInt();
+        String a =(marks%2==0)? "Even":"Odd";
+        String b=(marks>0)? "Positive":"Negative";
+        String c=(marks%5==0)? "Divisible by 5":"Not Divisible";
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+    }
+}
