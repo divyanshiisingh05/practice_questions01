@@ -1,0 +1,72 @@
+
+import java.util.Scanner;
+
+public class Question_06 {
+
+    static Scanner Sc = new Scanner(System.in);
+    static int total = 0;
+
+    static void car() {
+        System.out.println("Enter hours for which car is parked:");
+        int hourC = Sc.nextInt();
+        int amount;
+        if (hourC <= 2) {
+            amount = hourC * 30;
+        } else {
+            amount = 2 * 30 + (hourC - 2) * 20;
+        }
+        System.out.println("Car Amount: " + amount);
+        total = total + amount;
+    }
+    static void bike() {
+        System.out.println("Enter hours for which bike is parked:");
+        int hourB = Sc.nextInt();
+        int amount;
+        if (hourB <= 2) {
+            amount = hourB * 15;
+        } else {
+            amount = 2 * 15 + (hourB - 2) * 10;
+        }
+        System.out.println("Bike Amount: " + amount);
+        total = total + amount;
+    }
+    static void truck() {
+        System.out.println("Enter hours for which truck is parked:");
+        int hourT = Sc.nextInt();
+        int amount;
+        if (hourT <= 2) {
+            amount = hourT * 50;
+        } else {
+            amount = 2 * 50 + (hourT - 2) * 40;
+        }
+        System.out.println("Truck Amount: " + amount);
+        total = total + amount;
+    }
+    public static void main(String[] args) {
+        System.out.println("Enter the number of vehicles:");
+        int number = Sc.nextInt();
+        for (int i = 1; i <= number; i++) {
+            System.out.println("Enter vehicle type (1.Car 2.Bike 3.Truck):");
+            int choice = Sc.nextInt();
+            switch (choice) {
+                case 1:
+                    car();
+                    break;
+
+                case 2:
+                    bike();
+                    break;
+
+                case 3:
+                    truck();
+                    break;
+
+                default:
+                    System.out.println("Invalid vehicle type");
+                    break;
+            }
+        }
+        System.out.println("Total Parking Amount: " + total);
+        Sc.close();
+    }
+}
